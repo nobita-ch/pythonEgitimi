@@ -1,0 +1,57 @@
+site_name: Python Materyalleri
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+  - Ana Sayfa: index.md
+  - Python Ders Notları:
+      - 1) Girinti, Yorum ve Çok Satırlı İfadeler: "1) Girinti,Yorum ve Çok Satırlı İfadeler.md"
+      - 2) Girdi ve Çıktı: "2) Girdi ve Çıktı.md"
+      - 3) Değişkenler (Variables) ve Kapsam (Scope): "3) Değişkenler (Variables) ve Kapsam (Scope).md"
+      - 4) Veri Türleri (Data Types) ve Tip Dönüşümleri (Type Casting): "4) Veri Türleri (Data Types) ve Tip Dönüşümleri (Type Casting).md"
+      - 5) Python'da random Modülü: "5) Python'da random Modülü.md"
+      - 6) String (Dize - Dizgi - Karakter Dizisi): "6) String (Dize - Dizgi - Karakter Dizisi).md"
+      - 7) Operatörler: "7) Operatörler.md"
+      - 8) Boole Değerleri ve Doğruluk Mantıkları: "8) Boole Değerleri ve Doğruluk Mantıkları.md"
+      - 9.1) List (Liste): "9.1) Python Koleksiyonları - List (Liste).md"
+      - 9.2) Tuple (Demet): "9.2) Python Koleksiyonları - Tuple (Demet).md"
+      - 9.3) Set (Küme): "9.3) Python Koleksiyonları - Set (Küme).md"
+      - 9.4) Dictionary (Sözlük): "9.4) Python Koleksiyonları - Dictionarie (Sözlük).md"
+      - 10) if - else - elif (Koşul Durum İfadeleri): "10) if - else - elif (Koşul Durum İfadeleri).md"
+      - 11) match - case: "11) match - case.md"
+      - 12) Döngüler: "12) Döngüler.md"
+      - 13) Fonksiyonlar: "13) Fonksiyonlar.md"
+      - 14) Yineleyicileri (Iterators) ve Yinelenebilir (Iterables) Nesneler: "14) Yineleyicileri (Iterators) ve Yinelenebilir (Iterables) Nesneler.md"
+      - 15) Modüller (Modules) ve Paket Yapısı: "15) Modüller (Modules) ve Paket Yapısı.md"
+      - 16) Hata ve İstisna Yönetimi (Exception Handling): "16) Hata ve İstisna Yönetimi (Exception Handling).md"
+      - 17) Python'da Nesne Yönelimli Programlama (OOP) Sınıflar ve Nesneler: "18) Python'da Nesne Yönelimli Programlama (OOP) Sınıflar ve Nesneler.md"
+      - 18) __init__() Metodu: "19) __init__() Metodu.md"
+      - 19) self Parametresi: "20) self parametresi.md"
+      - 20) Sınıf Nitelikleri (Class Attributes) ve Örnek Nitelikleri (Instance Attributes): "21) Sınıf Nitelikleri (Class Attributes) ve Örnek Nitelikleri (Instance Attributes).md"
+      - 21) Sınıf Metotları: "22) Sınıf Metotlar (Class Methods).md"
+      - 22) Inheritance (Kalıtım): "23) Inheritance (Miras - Kalıtım).md"
+      - 23) Polymorphism: "24) Polymorphism (Polymorfizm).md"
+      - 24) Encapsulation: "25) Encapsulation (Kapsülleme).md"
+      - 25) Inner Classes: "26) Inner Classes (İç Sınıflar).md"
+
+
+  - Python Örnekleri: 
+      - Sorular-1: "Sorular-1.md"
+      - Sorular-2: "Sorular-2.md"
+      - Sorular-3: "Sorular-3.md"
