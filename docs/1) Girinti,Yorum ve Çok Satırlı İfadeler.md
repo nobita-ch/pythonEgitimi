@@ -1,6 +1,6 @@
 
 
-## 1. Girinti (Indentation)
+## 1. Girinti (Indentation)a
 
 Girinti, bir kod satırının başındaki boşluk miktarını ifade eder. C, C++ veya Java gibi diller blokları sınırlandırmak için **süslü parantez `{}`** kullanırken, Python **kod bloklarını (scope) belirlemek için doğrudan girintiyi kullanır**.
 
