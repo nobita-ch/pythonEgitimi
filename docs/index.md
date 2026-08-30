@@ -7,3 +7,5 @@ Sitede yer alan materyaller herkese açıktır; herhangi bir kayıt sistemi ya d
 İçerikler temel olarak W3Schools (https://www.w3schools.com/python/) üzerindeki Python dokümantasyonunun Türkçe çevirisi, konu anlatımlarının detaylandırılması ve örneklerle detaylandırılmış halinden oluşmaktadır.
 
 Sol taraftaki menüyü kullanarak temel sözdiziminden nesne yönelimli programlamaya kadar tüm ders notlarına ve konu sonu pekiştirme sorularına ulaşabilirsiniz.
+
+Sağ üst köşedeki arama çubuğu ile site içi arama yapabilirsiniz.
