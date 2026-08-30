@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES: VERİ TÜRLERİ (DATA TYPES) -->
+<!-- PYTHON INTERACTIVE EXERCISES: VERİ TÜRLERİ (DATA TYPES - TERMINAL ÇIKTILI) -->
 <div id="quiz-container-4" class="interactive-quiz">
   <!-- Üst Bar / İlerleme -->
   <div class="quiz-header">
@@ -21,9 +21,17 @@
     <!-- Kod / Boşluk Doldurma Konteyneri (Beyaz Arka Plan) -->
     <div id="workspace-4" class="workspace-box"></div>
 
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container-4" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output-4" class="output-box"></div>
+    </div>
+
     <!-- Parça Havuzu -->
-    <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
-    <div id="options-pool-4" class="options-container"></div>
+    <div id="pool-section-4">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool-4" class="options-container"></div>
+    </div>
   </div>
 
   <!-- Geri Bildirim ve Butonlar -->
@@ -120,6 +128,33 @@
   white-space: pre-wrap;
   word-break: break-word;
   color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .pool-header {
@@ -247,7 +282,7 @@
 </style>
 
 <script>
-// VERİ TÜRLERİ KONUSU İÇİN ÖZGÜN VE SADE SORU HAVUZU
+// VERİ TÜRLERİ KONUSU İÇİN ÖZGÜN VE SADE SORU HAVUZU (ÇIKTI VERİLERİYLE)
 const quizData4 = [
   /* ================= 5 ADET SIRALAMA / TIKLA-BIRAK ================= */
   {
@@ -265,7 +300,8 @@ const quizData4 = [
         "tam_sayi = int(ondalik)",
         "print(tam_sayi)"
       ]
-    ]
+    ],
+    output: "8"
   },
   {
     type: "arrange",
@@ -276,7 +312,6 @@ const quizData4 = [
       "renkler_demeti = (\"mavi\", \"yesil\")",
       "print(type(renkler_listesi), type(renkler_demeti))"
     ],
-    // Bağımsız tanımlar yer değiştirebilir
     solutions: [
       [
         "renkler_listesi = [\"mavi\", \"yesil\"]",
@@ -288,7 +323,8 @@ const quizData4 = [
         "renkler_listesi = [\"mavi\", \"yesil\"]",
         "print(type(renkler_listesi), type(renkler_demeti))"
       ]
-    ]
+    ],
+    output: "<class 'list'> <class 'tuple'>"
   },
   {
     type: "arrange",
@@ -305,7 +341,8 @@ const quizData4 = [
         "karmasik = complex(sayi)",
         "print(karmasik)"
       ]
-    ]
+    ],
+    output: "(15+0j)"
   },
   {
     type: "arrange",
@@ -327,7 +364,8 @@ const quizData4 = [
         "ayarlar = {\"ses\": 80, \"parlaklik\": 100}",
         "print(type(ayarlar), type(etiketler))"
       ]
-    ]
+    ],
+    output: "<class 'dict'> <class 'set'>"
   },
   {
     type: "arrange",
@@ -342,7 +380,8 @@ const quizData4 = [
         "cevap = None",
         "print(type(cevap))"
       ]
-    ]
+    ],
+    output: "<class 'NoneType'>"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
@@ -350,12 +389,13 @@ const quizData4 = [
     type: "fill",
     title: "6. Boşluk Doldurma: Kurucu ile dict Tanımlama",
     summary: "dict() kurucusu parametre olarak verilen isimli argümanları anahtar-değer eşleşmesine çevirir[cite: 4].",
-    template: "profil = {slot0}(kullanici=\"ahmet\", {slot1}=24)",
+    template: "profil = {slot0}(kullanici=\"ahmet\", {slot1}=24)\nprint(profil)",
     slots: ["slot0", "slot1"],
     options: ["dict", "yas", "list", "set"],
     validCombinations: [
       { slot0: "dict", slot1: "yas" }
-    ]
+    ],
+    output: "{'kullanici': 'ahmet', 'yas': 24}"
   },
   {
     type: "fill",
@@ -364,12 +404,12 @@ const quizData4 = [
     template: "print(bool({slot0}))  # False üretir\nprint(bool({slot1}))  # True üretir",
     slots: ["slot0", "slot1"],
     options: ["[]", "-5", "None", "\"\""],
-    // slot0 boş bir yapı veya None olabilir, slot1 dolu değer olmalıdır
     validCombinations: [
       { slot0: "[]", slot1: "-5" },
       { slot0: "None", slot1: "-5" },
       { slot0: "\"\"", slot1: "-5" }
-    ]
+    ],
+    output: "False\nTrue"
   },
   {
     type: "fill",
@@ -380,29 +420,32 @@ const quizData4 = [
     options: ["float", "type", "int", "str"],
     validCombinations: [
       { slot0: "float", slot1: "type" }
-    ]
+    ],
+    output: "<class 'float'>"
   },
   {
     type: "fill",
     title: "9. Boşluk Doldurma: İkili (Binary) bytes Tanımı",
     summary: "Metinlerin başına 'b' ön eki konularak veya bytes() kurucusu çağrılarak ikili bayt türü elde edilir[cite: 4].",
-    template: "ham_veri = {slot0}\"Sinyal\"\ntur = {slot1}(ham_veri)",
+    template: "ham_veri = {slot0}\"Sinyal\"\ntur = {slot1}(ham_veri)\nprint(tur)",
     slots: ["slot0", "slot1"],
     options: ["b", "type", "f", "bytearray"],
     validCombinations: [
       { slot0: "b", slot1: "type" }
-    ]
+    ],
+    output: "<class 'bytes'>"
   },
   {
     type: "fill",
     title: "10. Boşluk Doldurma: Değiştirilemez Sabit Küme (frozenset)",
     summary: "Elemanları sonradan değiştirilemeyen dondurulmuş küme oluşturmak için frozenset() kurucusu kullanılır[cite: 4].",
-    template: "rakamlar = {slot0}([{slot1}, 2, 3])",
+    template: "rakamlar = {slot0}([{slot1}, 2, 3])\nprint(type(rakamlar))",
     slots: ["slot0", "slot1"],
     options: ["frozenset", "1", "set", "tuple"],
     validCombinations: [
       { slot0: "frozenset", slot1: "1" }
-    ]
+    ],
+    output: "<class 'frozenset'>"
   }
 ];
 
@@ -429,6 +472,11 @@ function loadQuestion4(index) {
   const feedback = document.getElementById("feedback-4");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container-4");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output-4").innerText = "";
   
   document.getElementById("btn-check-4").style.display = "inline-block";
   document.getElementById("btn-next-4").style.display = "none";
@@ -552,7 +600,7 @@ function clearSlot4(slot) {
   renderFillWorkspace4();
 }
 
-/* Cevap Kontrolü */
+/* Cevap Kontrolü ve Terminal Çıktısı */
 function checkAnswer4() {
   const q = quizData4[currentStep4];
   let isCorrect = false;
@@ -576,7 +624,14 @@ function checkAnswer4() {
   }
 
   if (isCorrect) {
-    showFeedback4("✓ Tebrikler! Doğru cevap.", "success");
+    showFeedback4("✓ Tebrikler! Kod doğru çalıştı.", "success");
+    
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container-4");
+    const outputBox = document.getElementById("code-output-4");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check-4").style.display = "none";
     document.getElementById("btn-next-4").style.display = "inline-block";
   } else {
