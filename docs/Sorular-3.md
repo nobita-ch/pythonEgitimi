@@ -1,4 +1,4 @@
-<!-- PYTHON DEĞİŞKENLER VE KAPSAM (LEGB) ETKİLEŞİMLİ ALIŞTIRMALAR -->
+<!-- PYTHON DEĞİŞKENLER VE KAPSAM (LEGB) ETKİLEŞİMLİ ALIŞTIRMALAR (TERMINAL ÇIKTILI) -->
 <div id="quiz-container" class="interactive-quiz">
   <!-- Üst Bar / İlerleme -->
   <div class="quiz-header">
@@ -21,9 +21,17 @@
     <!-- Kod / Boşluk Doldurma Konteyneri -->
     <div id="workspace" class="workspace-box"></div>
 
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output" class="output-box"></div>
+    </div>
+
     <!-- Parça Havuzu -->
-    <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
-    <div id="options-pool" class="options-container"></div>
+    <div id="pool-section">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool" class="options-container"></div>
+    </div>
   </div>
 
   <!-- Geri Bildirim ve Butonlar -->
@@ -120,6 +128,33 @@
   white-space: pre-wrap;
   word-break: break-word;
   color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .pool-header {
@@ -264,7 +299,8 @@ const quizData = [
         "veri = \"Kitap\"",
         "print(veri)"
       ]
-    ]
+    ],
+    output: "Kitap"
   },
   {
     type: "arrange",
@@ -281,7 +317,8 @@ const quizData = [
         "cevre = (k1 + k2) * 2",
         "print(cevre)"
       ]
-    ]
+    ],
+    output: "26"
   },
   {
     type: "arrange",
@@ -296,7 +333,8 @@ const quizData = [
         "a = b = c = 0",
         "print(a, b, c)"
       ]
-    ]
+    ],
+    output: "0 0 0"
   },
   {
     type: "arrange",
@@ -315,7 +353,8 @@ const quizData = [
         "    global puan",
         "    puan += 5"
       ]
-    ]
+    ],
+    output: "# (puan_ekle() çağrıldığında global puan 15 olur)"
   },
   {
     type: "arrange",
@@ -336,7 +375,8 @@ const quizData = [
         "        nonlocal sayi",
         "        sayi += 1"
       ]
-    ]
+    ],
+    output: "# (ic() fonksiyonu dıştaki sayi değişkenini 2 yapar)"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
@@ -349,53 +389,57 @@ const quizData = [
     options: ["type", "adet", "int", "input"],
     validCombinations: [
       { slot0: "type", slot1: "adet" }
-    ]
+    ],
+    output: "<class 'int'>"
   },
   {
     type: "fill",
     title: "7. Boşluk Doldurma: Snake Case Adlandırma",
     summary: "Python (PEP 8) değişken adlandırma standardı Snake Case'dir; tüm harfler küçük yazılır ve kelimeler alt çizgi (_) ile ayrılır.",
-    template: "{slot0}{slot1}{slot2} = 50",
+    template: "{slot0}{slot1}{slot2} = 50\nprint({slot0}{slot1}{slot2})",
     slots: ["slot0", "slot1", "slot2"],
     options: ["kullanici", "_", "sayisi", "-", "Sayisi"],
     validCombinations: [
       { slot0: "kullanici", slot1: "_", slot2: "sayisi" }
-    ]
+    ],
+    output: "50"
   },
   {
     type: "fill",
     title: "8. Boşluk Doldurma: Sabit (Constant) Tanımlama",
     summary: "Değeri program boyunca değişmemesi gereken sabitler PEP 8 kuralına göre tamamen BÜYÜK HARFLERLE yazılır.",
-    template: "{slot0} = 3.14\n{slot1} = 500",
+    template: "{slot0} = 3.14\n{slot1} = 500\nprint({slot0}, {slot1})",
     slots: ["slot0", "slot1"],
     options: ["PI_DEGERI", "MAX_LIMIT", "pi_degeri", "maxLimit"],
-    // Sıralama bağımsız değişken cevap desteği
     validCombinations: [
       { slot0: "PI_DEGERI", slot1: "MAX_LIMIT" },
       { slot0: "MAX_LIMIT", slot1: "PI_DEGERI" }
-    ]
+    ],
+    output: "3.14 500"
   },
   {
     type: "fill",
     title: "9. Boşluk Doldurma: LEGB Arama Sırası",
     summary: "Python değişken ararken LEGB sırasını izler: Local (Yerel) -> Enclosing (Kapsayan) -> Global -> Built-in (Gömülü).",
-    template: "Sıralama: L -> {slot0} -> G -> {slot1}",
+    template: "sirasi = \"L -> {slot0} -> G -> {slot1}\"\nprint(sirasi)",
     slots: ["slot0", "slot1"],
     options: ["Enclosing", "Built-in", "Block", "Base"],
     validCombinations: [
       { slot0: "Enclosing", slot1: "Built-in" }
-    ]
+    ],
+    output: "L -> Enclosing -> G -> Built-in"
   },
   {
     type: "fill",
     title: "10. Boşluk Doldurma: Tip İpucu (Type Hint)",
     summary: "Tip ipuçlarında değişken adından sonra iki nokta ':' konup veri tipi belirtilir (degisken: str = \"Metin\").",
-    template: "ad{slot0} {slot1} = \"Deniz\"",
+    template: "ad{slot0} {slot1} = \"Deniz\"\nprint(ad)",
     slots: ["slot0", "slot1"],
     options: [":", "str", "=", "int"],
     validCombinations: [
       { slot0: ":", slot1: "str" }
-    ]
+    ],
+    output: "Deniz"
   }
 ];
 
@@ -422,6 +466,11 @@ function loadQuestion(index) {
   const feedback = document.getElementById("feedback");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output").innerText = "";
   
   document.getElementById("btn-check").style.display = "inline-block";
   document.getElementById("btn-next").style.display = "none";
@@ -570,6 +619,13 @@ function checkAnswer() {
 
   if (isCorrect) {
     showFeedback("✓ Tebrikler! Doğru cevap.", "success");
+    
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container");
+    const outputBox = document.getElementById("code-output");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check").style.display = "none";
     document.getElementById("btn-next").style.display = "inline-block";
   } else {
