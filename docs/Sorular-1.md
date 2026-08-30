@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES (MkDocs Light Theme / White Workspace) -->
+<!-- PYTHON INTERACTIVE EXERCISES (MkDocs Light Theme / White Workspace - Terminal Çıktılı) -->
 <div id="quiz-container" class="interactive-quiz">
   <div class="quiz-header">
     <div class="quiz-step-info">
@@ -17,8 +17,17 @@
     <!-- Kod / Boşluk Doldurma Alanı (Beyaz Arka Plan) -->
     <div id="workspace" class="workspace-box"></div>
 
-    <div class="pool-header">Kullanılabilir Parçalar (Seçmek / Kaldırmak için dokunun):</div>
-    <div id="options-pool" class="options-container"></div>
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output" class="output-box"></div>
+    </div>
+
+    <!-- Parça Havuzu -->
+    <div id="pool-section">
+      <div class="pool-header">Kullanılabilir Parçalar (Seçmek / Kaldırmak için dokunun):</div>
+      <div id="options-pool" class="options-container"></div>
+    </div>
   </div>
 
   <div class="quiz-footer">
@@ -109,6 +118,33 @@
   font-size: 0.92rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -255,7 +291,8 @@ const quizData = [
         "if hava_durumu == \"yagmurlu\":",
         "    print(\"Semsiyeni yanina al!\")"
       ]
-    ]
+    ],
+    output: "Semsiyeni yanina al!  # (Koşul True ise ekrana basılır)"
   },
   {
     type: "arrange",
@@ -272,7 +309,8 @@ const quizData = [
         "# Adım 2: Tabloları getir",
         "# Adım 3: Bağlantıyı kapat"
       ]
-    ]
+    ],
+    output: "# (Yorum satırları Python tarafından yürütülmez, çıktı üretmez)"
   },
   {
     type: "arrange",
@@ -281,15 +319,18 @@ const quizData = [
     pieces: [
       "mesaj = \"Python \" + \\",
       "        \"programlama \" + \\",
-      "        \"dili\""
+      "        \"dili\"",
+      "print(mesaj)"
     ],
     solutions: [
       [
         "mesaj = \"Python \" + \\",
         "        \"programlama \" + \\",
-        "        \"dili\""
+        "        \"dili\"",
+        "print(mesaj)"
       ]
-    ]
+    ],
+    output: "Python programlama dili"
   },
   {
     type: "arrange",
@@ -299,22 +340,26 @@ const quizData = [
       "ogrenci = {",
       "    'ad': 'Can',",
       "    'not': 95",
-      "}"
+      "}",
+      "print(ogrenci)"
     ],
     solutions: [
       [
         "ogrenci = {",
         "    'ad': 'Can',",
         "    'not': 95",
-        "}"
+        "}",
+        "print(ogrenci)"
       ],
       [
         "ogrenci = {",
         "    'not': 95,",
         "    'ad': 'Can'",
-        "}"
+        "}",
+        "print(ogrenci)"
       ]
-    ]
+    ],
+    output: "{'ad': 'Can', 'not': 95}"
   },
   {
     type: "arrange",
@@ -336,7 +381,8 @@ const quizData = [
         "puan = 50;",
         "print(puan + ekstra)"
       ]
-    ]
+    ],
+    output: "60"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA (TIKLA-YERLEŞTİR) ================= */
@@ -360,7 +406,8 @@ const quizData = [
         return { valid: true, message: "Doğru! (Python en az 1 boşluk kabul eder; ancak PEP 8 standardı olarak 4 boşluk tavsiye edilir).", type: "warning" };
       }
       return { valid: false, message: "Girinti veya blok başlatıcı hatalı, tekrar deneyin!", type: "error" };
-    }
+    },
+    output: "Yeni rekor kirildi!"
   },
   {
     type: "fill",
@@ -377,13 +424,14 @@ const quizData = [
     validate: function(state) {
       const valid = state.slot0 === "#" && state.slot1 === "print";
       return { valid: valid, message: valid ? "Harika! Satır içi açıklama ve yazdırma komutu doğru." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
-    }
+    },
+    output: "120"
   },
   {
     type: "fill",
     title: "8. Boşluk Doldurma: Çok Satırlı Açıklama / Docstring",
     desc: "Çok satırlı metin bloğunu sarmalayan tırnakları seçin. (Hem üç adet çift tırnak hem üç adet tek tırnak kabul edilir).",
-    template: "{slot0}\nSistem parametrelerini günceller.\nGeriye durum kodu döner.\n{slot1}",
+    template: "{slot0}\nSistem parametrelerini günceller.\nGeriye durum kodu döner.\n{slot1}\nprint(\"Belgelendirme Hazır\")",
     slots: ["slot0", "slot1"],
     options: [
       { label: '"""', value: '"""' },
@@ -395,13 +443,14 @@ const quizData = [
       const valid = (state.slot0 === '"""' && state.slot1 === '"""') || 
                     (state.slot0 === "'''" && state.slot1 === "'''");
       return { valid: valid, message: valid ? "Tebrikler! Üçlü tırnak blokları başarıyla tamamlandı." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
-    }
+    },
+    output: "Belgelendirme Hazır"
   },
   {
     type: "fill",
     title: "9. Boşluk Doldurma: Uzun Formülde Satır Atlama",
     desc: "Matematiksel işlemin alt satırda devam ettiğini belirten ters bölü (`\\`) kaçış işaretlerini yerleştirin.",
-    template: "alan = (taban * yukseklik) + {slot0}\n       (ekstra_pay) + {slot1}\n       tolerans",
+    template: "alan = (taban * yukseklik) + {slot0}\n       (ekstra_pay) + {slot1}\n       tolerans\nprint(alan)",
     slots: ["slot0", "slot1"],
     options: [
       { label: "\\", value: "\\" },
@@ -412,13 +461,14 @@ const quizData = [
     validate: function(state) {
       const valid = state.slot0 === "\\" && state.slot1 === "\\";
       return { valid: valid, message: valid ? "Harika! Açık satır devamı (\\) doğru uygulandı." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
-    }
+    },
+    output: "65  # (Tüm satırların toplam sonucu)"
   },
   {
     type: "fill",
     title: "10. Boşluk Doldurma: Örtük Satır Devamı (Parantez İçi Hesaplama)",
     desc: "Ters bölü (`\\`) kullanmadan matematiksel bir ifadenin alt satırlarda devam etmesini sağlayan açma ve kapama parantezlerini yerleştirin.",
-    template: "net_kazanc = {slot0}\n    ana_gelir + prim +\n    faiz_geliri - vergi\n{slot1}",
+    template: "net_kazanc = {slot0}\n    ana_gelir + prim +\n    faiz_geliri - vergi\n{slot1}\nprint(net_kazanc)",
     slots: ["slot0", "slot1"],
     options: [
       { label: "(", value: "(" },
@@ -429,7 +479,8 @@ const quizData = [
     validate: function(state) {
       const valid = state.slot0 === "(" && state.slot1 === ")";
       return { valid: valid, message: valid ? "Tebrikler! Parantez içi örtük satır devamı doğru kuruldu." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
-    }
+    },
+    output: "14500  # (Parantez içi hesaplama sonucu)"
   }
 ];
 
@@ -453,6 +504,11 @@ function loadQuestion(index) {
   const feedback = document.getElementById("feedback");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output").innerText = "";
   
   document.getElementById("btn-check").style.display = "inline-block";
   document.getElementById("btn-next").style.display = "none";
@@ -608,6 +664,12 @@ function checkAnswer() {
   showFeedback(feedbackText, feedbackType);
 
   if (isSuccess) {
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container");
+    const outputBox = document.getElementById("code-output");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check").style.display = "none";
     document.getElementById("btn-next").style.display = "inline-block";
   }
