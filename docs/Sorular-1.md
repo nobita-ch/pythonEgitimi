@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES (MkDocs Light Theme / Dark Code Blocks) -->
+<!-- PYTHON INTERACTIVE EXERCISES (MkDocs Light Theme / White Workspace) -->
 <div id="quiz-container" class="interactive-quiz">
   <div class="quiz-header">
     <div class="quiz-step-info">
@@ -14,7 +14,7 @@
     <h3 id="question-title" class="q-title"></h3>
     <p id="question-desc" class="q-desc"></p>
 
-    <!-- Kod / Boşluk Doldurma Alanı (Siyah Arka Plan) -->
+    <!-- Kod / Boşluk Doldurma Alanı (Beyaz Arka Plan) -->
     <div id="workspace" class="workspace-box"></div>
 
     <div class="pool-header">Kullanılabilir Parçalar (Seçmek / Kaldırmak için dokunun):</div>
@@ -97,11 +97,11 @@
   line-height: 1.5;
 }
 
-/* Soru & Cevap Kod Alanı (Siyah Tema) */
+/* Soru & Cevap Kod Alanı (Beyaz Arka Plan) */
 .workspace-box {
-  background: #18181b;
-  color: #f4f4f5;
-  border: 1px solid #27272a;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
   border-radius: 8px;
   padding: 1.1rem;
   min-height: 110px;
@@ -163,10 +163,10 @@
   display: inline-block;
   min-width: 74px;
   height: 28px;
-  border: 1.5px dashed #60a5fa;
+  border: 1.5px dashed #2563eb;
   border-radius: 4px;
-  background: rgba(96, 165, 250, 0.12);
-  color: #93c5fd;
+  background: #eff6ff;
+  color: #1e40af;
   vertical-align: middle;
   margin: 0 4px;
   text-align: center;
@@ -177,16 +177,16 @@
 
 .code-slot.filled {
   border-style: solid;
-  border-color: #34d399;
-  background: rgba(52, 211, 153, 0.18);
-  color: #6ee7b7;
+  border-color: #16a34a;
+  background: #f0fdf4;
+  color: #15803d;
 }
 
 /* Sıralanabilir Kod Satırları */
 .sortable-line {
-  background: #27272a;
-  border: 1px solid #3f3f46;
-  color: #fafafa;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
   padding: 0.45rem 0.75rem;
   border-radius: 6px;
   margin-bottom: 0.45rem;
@@ -198,6 +198,7 @@
 
 .sortable-line:hover {
   border-color: #f87171;
+  background: #fef2f2;
 }
 
 .quiz-footer {
@@ -214,6 +215,7 @@
 
 .feedback-msg.success { color: #16a34a; }
 .feedback-msg.error { color: #dc2626; }
+.feedback-msg.warning { color: #d97706; }
 
 .action-buttons {
   display: flex;
@@ -238,7 +240,6 @@
 </style>
 
 <script>
-// SIFIRDAN ÜRETİLMİŞ ÖZGÜN VE ESNEK SORU HAVUZU
 const quizData = [
   /* ================= 5 ADET SIRALAMA (TIKLA-SIRALA) ================= */
   {
@@ -342,7 +343,7 @@ const quizData = [
   {
     type: "fill",
     title: "6. Boşluk Doldurma: Blok Başlatma ve Girinti Standartı",
-    desc: "Koşul bloğunu başlatan karakteri (`:`) ve alt satırdaki komutun PEP 8 standart 4 boşlukluk (`␣␣␣␣`) girintisini yerleştirin.",
+    desc: "Koşul bloğunu başlatan karakteri (`:`) ve alt satırdaki komutun girintisini yerleştirin.",
     template: "if skor > 100{slot0}\n{slot1}print(\"Yeni rekor kirildi!\")",
     slots: ["slot0", "slot1"],
     options: [
@@ -352,7 +353,13 @@ const quizData = [
       { label: "␣␣ (2 Boşluk)", value: "  " }
     ],
     validate: function(state) {
-      return state.slot0 === ":" && state.slot1 === "    ";
+      if (state.slot0 === ":" && state.slot1 === "    ") {
+        return { valid: true, message: "Harika! Kod Python (PEP 8) standardı olan 4 boşluk girintisine tam uyumlu.", type: "success" };
+      }
+      if (state.slot0 === ":" && state.slot1 === "  ") {
+        return { valid: true, message: "Doğru! (Python en az 1 boşluk kabul eder; ancak PEP 8 standardı olarak 4 boşluk tavsiye edilir).", type: "warning" };
+      }
+      return { valid: false, message: "Girinti veya blok başlatıcı hatalı, tekrar deneyin!", type: "error" };
     }
   },
   {
@@ -368,7 +375,8 @@ const quizData = [
       { label: "echo", value: "echo" }
     ],
     validate: function(state) {
-      return state.slot0 === "#" && state.slot1 === "print";
+      const valid = state.slot0 === "#" && state.slot1 === "print";
+      return { valid: valid, message: valid ? "Harika! Satır içi açıklama ve yazdırma komutu doğru." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
     }
   },
   {
@@ -384,8 +392,9 @@ const quizData = [
       { label: "'''", value: "'''" }
     ],
     validate: function(state) {
-      return (state.slot0 === '"""' && state.slot1 === '"""') || 
-             (state.slot0 === "'''" && state.slot1 === "'''");
+      const valid = (state.slot0 === '"""' && state.slot1 === '"""') || 
+                    (state.slot0 === "'''" && state.slot1 === "'''");
+      return { valid: valid, message: valid ? "Tebrikler! Üçlü tırnak blokları başarıyla tamamlandı." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
     }
   },
   {
@@ -401,7 +410,8 @@ const quizData = [
       { label: ";", value: ";" }
     ],
     validate: function(state) {
-      return state.slot0 === "\\" && state.slot1 === "\\";
+      const valid = state.slot0 === "\\" && state.slot1 === "\\";
+      return { valid: valid, message: valid ? "Harika! Açık satır devamı (\\) doğru uygulandı." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
     }
   },
   {
@@ -417,7 +427,8 @@ const quizData = [
       { label: "}", value: "}" }
     ],
     validate: function(state) {
-      return state.slot0 === "(" && state.slot1 === ")";
+      const valid = state.slot0 === "(" && state.slot1 === ")";
+      return { valid: valid, message: valid ? "Tebrikler! Parantez içi örtük satır devamı doğru kuruldu." : "Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", type: valid ? "success" : "error" };
     }
   }
 ];
@@ -496,14 +507,14 @@ function removePieceFromArrange(index) {
 function renderArrangeWorkspace() {
   const workspace = document.getElementById("workspace");
   if (userArrangeState.length === 0) {
-    workspace.innerHTML = '<span style="color: #71717a; font-style: italic;">Aşağıdaki kod parçalarına tıklayarak sırayla buraya ekleyin...</span>';
+    workspace.innerHTML = '<span style="color: #94a3b8; font-style: italic;">Aşağıdaki kod parçalarına tıklayarak sırayla buraya ekleyin...</span>';
     return;
   }
   workspace.innerHTML = "";
   userArrangeState.forEach((item, idx) => {
     const line = document.createElement("div");
     line.className = "sortable-line";
-    line.innerHTML = `<span>${escapeHtml(item.text)}</span> <span style="color:#f87171; font-size:0.75rem;">✕ Kaldır</span>`;
+    line.innerHTML = `<span>${escapeHtml(item.text)}</span> <span style="color:#ef4444; font-size:0.75rem; font-weight:600;">✕ Kaldır</span>`;
     line.onclick = () => removePieceFromArrange(idx);
     workspace.appendChild(line);
   });
@@ -567,7 +578,9 @@ function clearSlot(slot) {
 /* Kontrol ve Esnek Doğrulama */
 function checkAnswer() {
   const q = quizData[currentStep];
-  let isCorrect = false;
+  let isSuccess = false;
+  let feedbackText = "";
+  let feedbackType = "error";
 
   if (q.type === "arrange") {
     const userAns = userArrangeState.map(i => i.text);
@@ -575,7 +588,9 @@ function checkAnswer() {
       showFeedback("Lütfen tüm parçaları yerleştirin.", "error");
       return;
     }
-    isCorrect = q.solutions.some(sol => JSON.stringify(userAns) === JSON.stringify(sol));
+    isSuccess = q.solutions.some(sol => JSON.stringify(userAns) === JSON.stringify(sol));
+    feedbackText = isSuccess ? "Harika! Kod Python sözdizimine ve standartlara tam uyumlu." : "Dizilimde hata var, tekrar deneyin!";
+    feedbackType = isSuccess ? "success" : "error";
   } else if (q.type === "fill") {
     const isAllFilled = q.slots.every(s => userFillState[s] !== null);
     if (!isAllFilled) {
@@ -584,15 +599,17 @@ function checkAnswer() {
     }
     const flatState = {};
     q.slots.forEach(s => flatState[s] = userFillState[s].value);
-    isCorrect = q.validate(flatState);
+    const result = q.validate(flatState);
+    isSuccess = result.valid;
+    feedbackText = result.message;
+    feedbackType = result.type;
   }
 
-  if (isCorrect) {
-    showFeedback("Harika! Kod Python sözdizimine ve standartlara tam uyumlu.", "success");
+  showFeedback(feedbackText, feedbackType);
+
+  if (isSuccess) {
     document.getElementById("btn-check").style.display = "none";
     document.getElementById("btn-next").style.display = "inline-block";
-  } else {
-    showFeedback("Dizilimde veya seçilen parçalarda hata var, tekrar deneyin!", "error");
   }
 }
 
