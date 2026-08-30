@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES: RANDOM MODÜLÜ -->
+<!-- PYTHON INTERACTIVE EXERCISES: RANDOM MODÜLÜ (TERMINAL ÇIKTILI) -->
 <div id="quiz-container-5" class="interactive-quiz">
   <!-- Üst Bar / İlerleme -->
   <div class="quiz-header">
@@ -21,9 +21,17 @@
     <!-- Kod / Boşluk Doldurma Konteyneri (Beyaz Arka Plan) -->
     <div id="workspace-5" class="workspace-box"></div>
 
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container-5" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output-5" class="output-box"></div>
+    </div>
+
     <!-- Parça Havuzu -->
-    <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
-    <div id="options-pool-5" class="options-container"></div>
+    <div id="pool-section-5">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool-5" class="options-container"></div>
+    </div>
   </div>
 
   <!-- Geri Bildirim ve Butonlar -->
@@ -120,6 +128,33 @@
   white-space: pre-wrap;
   word-break: break-word;
   color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .pool-header {
@@ -247,13 +282,13 @@
 </style>
 
 <script>
-// RANDOM MODÜLÜ İÇİN ÖZGÜN VE SADE SORU HAVUZU
+// RANDOM MODÜLÜ SORU HAVUZU VE ÇIKTI VERİLERİ
 const quizData5 = [
   /* ================= 5 ADET SIRALAMA / TIKLA-BIRAK ================= */
   {
     type: "arrange",
     title: "1. Modülü Dahil Etme ve randint() ile Zar Atma",
-    summary: "random modülü önce 'import random' ile projeye dahil edilir, ardından randint(a, b) her iki sınır da dahil olacak şekilde tam sayı üretir.",
+    summary: "random modülü önce 'import random' ile projeye dahil edilir, ardından randint(a, b) her iki sınır da dahil olacak şekilde tam sayı üretir[cite: 5].",
     pieces: [
       "import random",
       "zar = random.randint(1, 6)",
@@ -265,12 +300,13 @@ const quizData5 = [
         "zar = random.randint(1, 6)",
         "print(zar)"
       ]
-    ]
+    ],
+    output: "4  # (1 ile 6 arasında rastgele bir tam sayı)"
   },
   {
     type: "arrange",
     title: "2. Listeden Rastgele Tek Eleman Seçme (choice)",
-    summary: "random.choice() fonksiyonu verilen bir diziden/listeden rastgele tek bir eleman seçer.",
+    summary: "random.choice() fonksiyonu verilen bir diziden/listeden rastgele tek bir eleman seçer[cite: 5].",
     pieces: [
       "import random",
       "sehirler = [\"Ankara\", \"İzmir\", \"Bursa\"]",
@@ -284,12 +320,13 @@ const quizData5 = [
         "secilen_sehir = random.choice(sehirler)",
         "print(secilen_sehir)"
       ]
-    ]
+    ],
+    output: "İzmir  # (Listeden rastgele seçilen tek eleman)"
   },
   {
     type: "arrange",
     title: "3. Listenin Elemanlarını Yerinde Karıştırma (shuffle)",
-    summary: "random.shuffle() fonksiyonu listenin orijinal sırasını doğrudan yerinde (in-place) karıştırır.",
+    summary: "random.shuffle() fonksiyonu listenin orijinal sırasını doğrudan yerinde (in-place) karıştırır[cite: 5].",
     pieces: [
       "import random",
       "kartlar = [\"As\", \"Papaz\", \"Kız\", \"Vale\"]",
@@ -303,12 +340,13 @@ const quizData5 = [
         "random.shuffle(kartlar)",
         "print(kartlar)"
       ]
-    ]
+    ],
+    output: "['Kız', 'As', 'Vale', 'Papaz']  # (Karıştırılmış liste)"
   },
   {
     type: "arrange",
     title: "4. Tekrarsız Çoklu Eleman Seçme (sample)",
-    summary: "random.sample(liste, k) fonksiyonu belirtilen listeden tekrar etmeyecek şekilde 'k' adet eleman seçer.",
+    summary: "random.sample(liste, k) fonksiyonu belirtilen listeden tekrar etmeyecek şekilde 'k' adet eleman seçer[cite: 5].",
     pieces: [
       "import random",
       "numaralar = [10, 20, 30, 40, 50]",
@@ -322,12 +360,13 @@ const quizData5 = [
         "secilenler = random.sample(numaralar, k=3)",
         "print(secilenler)"
       ]
-    ]
+    ],
+    output: "[40, 10, 50]  # (Tekrarsız seçilen 3 eleman)"
   },
   {
     type: "arrange",
     title: "5. Sabit Tohum Belirleme ve Sayı Üretme (seed)",
-    summary: "random.seed() sözde rastgele algoritmanın başlangıç noktasını sabitler ve aynı serinin tekrar üretilmesini sağlar.",
+    summary: "random.seed() sözde rastgele algoritmanın başlangıç noktasını sabitler ve aynı serinin tekrar üretilmesini sağlar[cite: 5].",
     pieces: [
       "import random",
       "random.seed(100)",
@@ -341,64 +380,70 @@ const quizData5 = [
         "sayi = random.randint(1, 50)",
         "print(sayi)"
       ]
-    ]
+    ],
+    output: "19  # (Tohum 100 olduğu sürece sabit üretilen değer)"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
   {
     type: "fill",
     title: "6. Boşluk Doldurma: Adımlı Aralık Üretimi (randrange)",
-    summary: "random.randrange(start, stop, step) fonksiyonunda bitiş değeri hariçtir ve belirtilen adım miktarına göre tam sayı seçilir.",
-    template: "import {slot0}\ntek_sayi = random.{slot1}(1, 10, 2)",
+    summary: "random.randrange(start, stop, step) fonksiyonunda bitiş değeri hariçtir ve belirtilen adım miktarına göre tam sayı seçilir[cite: 5].",
+    template: "import {slot0}\ntek_sayi = random.{slot1}(1, 10, 2)\nprint(tek_sayi)",
     slots: ["slot0", "slot1"],
     options: ["random", "randrange", "randint", "uniform"],
     validCombinations: [
       { slot0: "random", slot1: "randrange" }
-    ]
+    ],
+    output: "7  # (1, 3, 5, 7, 9 kümesinden rastgele tek sayı)"
   },
   {
     type: "fill",
     title: "7. Boşluk Doldurma: 0.0 - 1.0 Arası Ondalıklı Sayı",
-    summary: "random.random() fonksiyonu parametre almaz ve 0.0 ile 1.0 (1.0 hariç) arasında float sayı üretir.",
+    summary: "random.random() fonksiyonu parametre almaz ve 0.0 ile 1.0 (1.0 hariç) arasında float sayı üretir[cite: 5].",
     template: "import random\nondalik = random.{slot0}()\nprint({slot1}(ondalik))",
     slots: ["slot0", "slot1"],
     options: ["random", "type", "uniform", "int"],
     validCombinations: [
       { slot0: "random", slot1: "type" }
-    ]
+    ],
+    output: "<class 'float'>"
   },
   {
     type: "fill",
     title: "8. Boşluk Doldurma: Belirli İki Değer Arası Ondalıklı Sayı",
-    summary: "random.uniform(a, b) fonksiyonu belirlenen iki sınır arasında ondalıklı (float) sayı üretir.",
-    template: "import random\nsicaklik = random.{slot0}({slot1}, 38.5)",
+    summary: "random.uniform(a, b) fonksiyonu belirlenen iki sınır arasında ondalıklı (float) sayı üretir[cite: 5].",
+    template: "import random\nsicaklik = random.{slot0}({slot1}, 38.5)\nprint(f\"{sicaklik:.2f}\")",
     slots: ["slot0", "slot1"],
     options: ["uniform", "36.0", "randint", "choice"],
     validCombinations: [
       { slot0: "uniform", slot1: "36.0" }
-    ]
+    ],
+    output: "37.14  # (36.0 ile 38.5 arası float değer)"
   },
   {
     type: "fill",
     title: "9. Boşluk Doldurma: İki Sınırın da Dahil Olduğu Tam Sayı",
-    summary: "random.randint(a, b) fonksiyonunda hem başlangıç 'a' hem de bitiş 'b' değeri üretilecek sayıya dahildir.",
-    template: "import random\nnot_degeri = random.{slot0}(0, {slot1})",
+    summary: "random.randint(a, b) fonksiyonunda hem başlangıç 'a' hem de bitiş 'b' değeri üretilecek sayıya dahildir[cite: 5].",
+    template: "import random\nnot_degeri = random.{slot0}(0, {slot1})\nprint(not_degeri)",
     slots: ["slot0", "slot1"],
     options: ["randint", "100", "randrange", "sample"],
     validCombinations: [
       { slot0: "randint", slot1: "100" }
-    ]
+    ],
+    output: "85  # (0 ile 100 dahil aralıktan tam sayı)"
   },
   {
     type: "fill",
     title: "10. Boşluk Doldurma: Rastgele Liste Elemanı Seçimi",
-    summary: "random.choice() listeden tek eleman seçerken, modülü kullanmak için 'import random' ifadesi yazılmalıdır.",
-    template: "{slot0} random\nhayvanlar = [\"kedi\", \"kopek\"]\nsecim = random.{slot1}(hayvanlar)",
+    summary: "random.choice() listeden tek eleman seçerken[cite: 5], modülü kullanmak için 'import random' ifadesi yazılmalıdır[cite: 5].",
+    template: "{slot0} random\nhayvanlar = [\"kedi\", \"kopek\"]\nsecim = random.{slot1}(hayvanlar)\nprint(secim)",
     slots: ["slot0", "slot1"],
     options: ["import", "choice", "shuffle", "from"],
     validCombinations: [
       { slot0: "import", slot1: "choice" }
-    ]
+    ],
+    output: "kopek  # (Listeden seçilen rastgele eleman)"
   }
 ];
 
@@ -416,7 +461,7 @@ function loadQuestion5(index) {
   document.getElementById("type-badge-5").innerText = q.type === "arrange" ? "Sıralama" : "Boşluk Doldurma";
   document.getElementById("progress-fill-5").style.width = `${((index + 1) / quizData5.length) * 100}%`;
   
-  // Konu kuralı kutusu sorunun en üstünde sürekli görünür
+  // Konu kuralı kutusu
   const summaryBox = document.getElementById("topic-summary-5");
   summaryBox.innerHTML = `<strong>Konu Bilgisi:</strong> ${q.summary}`;
   
@@ -425,6 +470,11 @@ function loadQuestion5(index) {
   const feedback = document.getElementById("feedback-5");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container-5");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output-5").innerText = "";
   
   document.getElementById("btn-check-5").style.display = "inline-block";
   document.getElementById("btn-next-5").style.display = "none";
@@ -548,7 +598,7 @@ function clearSlot5(slot) {
   renderFillWorkspace5();
 }
 
-/* Cevap Kontrolü */
+/* Cevap Kontrolü ve Konsol Çıktısı Gösterme */
 function checkAnswer5() {
   const q = quizData5[currentStep5];
   let isCorrect = false;
@@ -572,7 +622,14 @@ function checkAnswer5() {
   }
 
   if (isCorrect) {
-    showFeedback5("✓ Tebrikler! Doğru cevap.", "success");
+    showFeedback5("✓ Tebrikler! Kod doğru çalıştı.", "success");
+    
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container-5");
+    const outputBox = document.getElementById("code-output-5");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check-5").style.display = "none";
     document.getElementById("btn-next-5").style.display = "inline-block";
   } else {
