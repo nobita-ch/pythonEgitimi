@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES: PRINT & INPUT (WHITE THEME / STATIC SUMMARY) -->
+<!-- PYTHON INTERACTIVE EXERCISES: PRINT & INPUT (WHITE THEME / STATIC SUMMARY - TERMINAL ÇIKTILI) -->
 <div id="quiz-container-2" class="interactive-quiz">
   <!-- Üst Bar / İlerleme -->
   <div class="quiz-header">
@@ -21,9 +21,17 @@
     <!-- Kod / Boşluk Doldurma Konteyneri -->
     <div id="workspace-2" class="workspace-box"></div>
 
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container-2" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output-2" class="output-box"></div>
+    </div>
+
     <!-- Parça Havuzu -->
-    <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
-    <div id="options-pool-2" class="options-container"></div>
+    <div id="pool-section-2">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool-2" class="options-container"></div>
+    </div>
   </div>
 
   <!-- Geri Bildirim ve Butonlar -->
@@ -120,6 +128,33 @@
   white-space: pre-wrap;
   word-break: break-word;
   color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .pool-header {
@@ -247,7 +282,7 @@
 </style>
 
 <script>
-// BASİT VE DOĞRUDAN KONU ODAKLI SORU VERİ SETİ
+// BASİT VE DOĞRUDAN KONU ODAKLI SORU VERİ SETİ (ÇIKTILARLA BİRLİKTE)
 const quizData2 = [
   /* ================= 5 ADET SIRALAMA / TIKLA-BIRAK ================= */
   {
@@ -263,7 +298,8 @@ const quizData2 = [
         "isim = input(\"Adınız: \")",
         "print(f\"Merhaba {isim}\")"
       ]
-    ]
+    ],
+    output: "Adınız: Ali\nMerhaba Ali"
   },
   {
     type: "arrange",
@@ -280,7 +316,8 @@ const quizData2 = [
         "sayi = int(veri)",
         "print(sayi * 2)"
       ]
-    ]
+    ],
+    output: "Sayı: 5\n10"
   },
   {
     type: "arrange",
@@ -295,7 +332,8 @@ const quizData2 = [
         "print(\"Yükleniyor\", end=\" -> \")",
         "print(\"Bitti\")"
       ]
-    ]
+    ],
+    output: "Yükleniyor -> Bitti"
   },
   {
     type: "arrange",
@@ -317,7 +355,8 @@ const quizData2 = [
         "urun = \"Kitap\"",
         "print(\"Ürün:\", urun, \"Adet:\", adet)"
       ]
-    ]
+    ],
+    output: "Ürün: Kitap Adet: 2"
   },
   {
     type: "arrange",
@@ -334,7 +373,8 @@ const quizData2 = [
         "print(\"Adım 2\");",
         "print(\"Adım 3\")"
       ]
-    ]
+    ],
+    output: "Adım 1\nAdım 2\nAdım 3"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
@@ -347,18 +387,20 @@ const quizData2 = [
     options: ["sep", "end", "file", "int"],
     validCombinations: [
       { slot0: "sep" }
-    ]
+    ],
+    output: "2026/08/29"
   },
   {
     type: "fill",
     title: "7. Boşluk Doldurma: float() Tip Dönüşümü",
     summary: "Kullanıcıdan alınan küsüratlı/ondalıklı değerler matematiksel işlem için float() ile dönüştürülür[cite: 2].",
-    template: "kilo = {slot0}({slot1}(\"Kilonuz: \"))",
+    template: "kilo = {slot0}({slot1}(\"Kilonuz: \"))\nprint(kilo)",
     slots: ["slot0", "slot1"],
     options: ["float", "input", "print", "str"],
     validCombinations: [
       { slot0: "float", slot1: "input" }
-    ]
+    ],
+    output: "Kilonuz: 72.5\n72.5"
   },
   {
     type: "fill",
@@ -369,7 +411,8 @@ const quizData2 = [
     options: ["f", "{", "}", "$", "[", "]"],
     validCombinations: [
       { slot0: "f", slot1: "{", slot2: "}" }
-    ]
+    ],
+    output: "Konum: Bursa"
   },
   {
     type: "fill",
@@ -381,7 +424,8 @@ const quizData2 = [
     validCombinations: [
       { slot0: '"""', slot1: '"""' },
       { slot0: "'''", slot1: "'''" }
-    ]
+    ],
+    output: "Satır 1\nSatır 2"
   },
   {
     type: "fill",
@@ -392,7 +436,8 @@ const quizData2 = [
     options: ["int", "end", "sep", "float"],
     validCombinations: [
       { slot0: "int", slot1: "end" }
-    ]
+    ],
+    output: "4242  # (Girdi 42 olduğunda alt satıra geçmeden bitiş sağlar)"
   }
 ];
 
@@ -419,6 +464,11 @@ function loadQuestion2(index) {
   const feedback = document.getElementById("feedback-2");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container-2");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output-2").innerText = "";
   
   document.getElementById("btn-check-2").style.display = "inline-block";
   document.getElementById("btn-next-2").style.display = "none";
@@ -564,6 +614,13 @@ function checkAnswer2() {
 
   if (isCorrect) {
     showFeedback2("✓ Tebrikler! Doğru cevap.", "success");
+    
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container-2");
+    const outputBox = document.getElementById("code-output-2");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check-2").style.display = "none";
     document.getElementById("btn-next-2").style.display = "inline-block";
   } else {
