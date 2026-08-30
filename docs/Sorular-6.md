@@ -1,4 +1,4 @@
-<!-- PYTHON INTERACTIVE EXERCISES: STRINGS (METİN İŞLEMLERİ) -->
+<!-- PYTHON INTERACTIVE EXERCISES: STRINGS (METİN İŞLEMLERİ - TERMINAL ÇIKTILI) -->
 <div id="quiz-container-6" class="interactive-quiz">
   <!-- Üst Bar / İlerleme -->
   <div class="quiz-header">
@@ -21,9 +21,17 @@
     <!-- Kod / Boşluk Doldurma Konteyneri (Beyaz Arka Plan) -->
     <div id="workspace-6" class="workspace-box"></div>
 
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container-6" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output-6" class="output-box"></div>
+    </div>
+
     <!-- Parça Havuzu -->
-    <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
-    <div id="options-pool-6" class="options-container"></div>
+    <div id="pool-section-6">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool-6" class="options-container"></div>
+    </div>
   </div>
 
   <!-- Geri Bildirim ve Butonlar -->
@@ -120,6 +128,33 @@
   white-space: pre-wrap;
   word-break: break-word;
   color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .pool-header {
@@ -247,13 +282,13 @@
 </style>
 
 <script>
-// STRINGS (METİN İŞLEMLERİ) KONUSU İÇİN ÖZGÜN VE SADE SORU HAVUZU
+// STRINGS (METİN İŞLEMLERİ) SORU HAVUZU VE ÇIKTI VERİLERİ
 const quizData6 = [
   /* ================= 5 ADET SIRALAMA / TIKLA-BIRAK ================= */
   {
     type: "arrange",
     title: "1. String Dilimleme ile Metni Tersine Çevirme",
-    summary: "Dilimleme sözdiziminde [::-1] adımı step değerini -1 yaparak string'i baştan sona tersine çevirir.",
+    summary: "Dilimleme sözdiziminde [::-1] adımı step değerini -1 yaparak string'i baştan sona tersine çevirir[cite: 6].",
     pieces: [
       "kelime = \"yazilim\"",
       "ters = kelime[::-1]",
@@ -265,12 +300,13 @@ const quizData6 = [
         "ters = kelime[::-1]",
         "print(ters)"
       ]
-    ]
+    ],
+    output: "miliyaz"
   },
   {
     type: "arrange",
     title: "2. split() ile Bölme ve join() ile Birleştirme",
-    summary: "split() metni belirtilen ayırıcıya göre listeye böler, join() ise bir listenin elemanlarını araya karakter koyarak tek bir metne birleştirir.",
+    summary: "split() metni belirtilen ayırıcıya göre listeye böler, join() ise bir listenin elemanlarını araya karakter koyarak tek bir metne birleştirir[cite: 6].",
     pieces: [
       "metin = \"elma-armut-muz\"",
       "meyveler = metin.split(\"-\")",
@@ -284,12 +320,13 @@ const quizData6 = [
         "sonuc = \", \".join(meyveler)",
         "print(sonuc)"
       ]
-    ]
+    ],
+    output: "elma, armut, muz"
   },
   {
     type: "arrange",
     title: "3. strip() ile Boşluk Temizleme ve upper() Dönüşümü",
-    summary: "strip() metnin başındaki ve sonundaki gereksiz boşlukları siler; upper() ise tüm harfleri büyük harfe çevirir.",
+    summary: "strip() metnin başındaki ve sonundaki gereksiz boşlukları siler; upper() ise tüm harfleri büyük harfe çevirir[cite: 6].",
     pieces: [
       "ham_metin = \"   giris yapildi   \"",
       "temiz_metin = ham_metin.strip()",
@@ -301,12 +338,13 @@ const quizData6 = [
         "temiz_metin = ham_metin.strip()",
         "print(temiz_metin.upper())"
       ]
-    ]
+    ],
+    output: "GIRIS YAPILDI"
   },
   {
     type: "arrange",
     title: "4. format() Metodu ile Konumsal İndeks Kullanımı",
-    summary: "str.format() yönteminde yer tutuculara {0}, {1} gibi konumsal indeksler verilerek argüman sırası belirlenebilir.",
+    summary: "str.format() yönteminde yer tutuculara {0}, {1} gibi konumsal indeksler verilerek argüman sırası belirlenebilir[cite: 6].",
     pieces: [
       "sablon = \"{1} dili ile {0} gelistirme\"",
       "mesaj = sablon.format(\"web\", \"Python\")",
@@ -318,12 +356,13 @@ const quizData6 = [
         "mesaj = sablon.format(\"web\", \"Python\")",
         "print(mesaj)"
       ]
-    ]
+    ],
+    output: "Python dili ile web gelistirme"
   },
   {
     type: "arrange",
     title: "5. replace() Metodu ile Metin Parçası Güncelleme",
-    summary: "replace(eski, yeni) metodu orijinal metni değiştirmeden hedeflenen parçayı yenisiyle değiştirilmiş olarak döndürür.",
+    summary: "replace(eski, yeni) metodu orijinal metni değiştirmeden hedeflenen parçayı yenisiyle değiştirilmiş olarak döndürür[cite: 6].",
     pieces: [
       "cumle = \"merhaba dunya\"",
       "yeni_cumle = cumle.replace(\"dunya\", \"evren\")",
@@ -335,64 +374,70 @@ const quizData6 = [
         "yeni_cumle = cumle.replace(\"dunya\", \"evren\")",
         "print(yeni_cumle)"
       ]
-    ]
+    ],
+    output: "merhaba evren"
   },
 
   /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
   {
     type: "fill",
     title: "6. Boşluk Doldurma: String Uzunluğu (len) ve in Kontrolü",
-    summary: "len() fonksiyonu toplam karakter sayısını döner; 'in' işleci ise bir alt metnin string içinde var olup olmadığını kontrol eder.",
-    template: "bilgi = \"Veri Tabani\"\nuzunluk = {slot0}(bilgi)\nvar_mi = \"Veri\" {slot1} bilgi",
+    summary: "len() fonksiyonu toplam karakter sayısını döner; 'in' işleci ise bir alt metnin string içinde var olup olmadığını kontrol eder[cite: 6].",
+    template: "bilgi = \"Veri Tabani\"\nuzunluk = {slot0}(bilgi)\nvar_mi = \"Veri\" {slot1} bilgi\nprint(uzunluk, var_mi)",
     slots: ["slot0", "slot1"],
     options: ["len", "in", "count", "is"],
     validCombinations: [
       { slot0: "len", slot1: "in" }
-    ]
+    ],
+    output: "11 True"
   },
   {
     type: "fill",
     title: "7. Boşluk Doldurma: f-string Ondalık Biçimlendirici (:.2f)",
-    summary: "f-string içinde ':.2f' format belirteci, ondalıklı sayının virgülden sonra sabit 2 basamak olarak yazdırılmasını sağlar.",
+    summary: "f-string içinde ':.2f' format belirteci, ondalıklı sayının virgülden sonra sabit 2 basamak olarak yazdırılmasını sağlar[cite: 6].",
     template: "fiyat = 19.8564\nprint({slot0}\"Tutar: {fiyat{slot1}} TL\")",
     slots: ["slot0", "slot1"],
     options: ["f", ":.2f", ":2d", "str"],
     validCombinations: [
       { slot0: "f", slot1: ":.2f" }
-    ]
+    ],
+    output: "Tutar: 19.86 TL"
   },
   {
     type: "fill",
     title: "8. Boşluk Doldurma: Kaçış Karakterleri (\\n ve \\t)",
-    summary: "Ters bölü kaçış dizilerinden '\\n' yeni satıra geçmeyi, '\\t' ise bir sekme (tab) boşluğu bırakmayı sağlar.",
-    template: "metin = \"Baslik{slot0}Alt Metin{slot1}Sutun 2\"",
+    summary: "Ters bölü kaçış dizilerinden '\\n' yeni satıra geçmeyi, '\\t' ise bir sekme (tab) boşluğu bırakmayı sağlar[cite: 6].",
+    template: "metin = \"Baslik{slot0}Alt Metin{slot1}Sutun 2\"\nprint(metin)",
     slots: ["slot0", "slot1"],
     options: ["\\n", "\\t", "/n", "/t"],
     validCombinations: [
       { slot0: "\\n", slot1: "\\t" }
-    ]
+    ],
+    output: "Baslik\nAlt Metin\tSutun 2"
   },
   {
     type: "fill",
     title: "9. Boşluk Doldurma: startswith() ve endswith() Kontrolü",
-    summary: "startswith() dize belirtilen metinle başlıyorsa, endswith() ise belirtilen uzantı/metinle bitiyorsa True döndürür.",
-    template: "adres = \"https://python.org\"\nbaslangic = adres.{slot0}(\"https\")\nbitis = adres.{slot1}(\".org\")",
+    summary: "startswith() dize belirtilen metinle başlıyorsa, endswith() ise belirtilen uzantı/metinle bitiyorsa True döndürür[cite: 6].",
+    template: "adres = \"https://python.org\"\nbaslangic = adres.{slot0}(\"https\")\nbitis = adres.{slot1}(\".org\")\nprint(baslangic, bitis)",
     slots: ["slot0", "slot1"],
     options: ["startswith", "endswith", "find", "index"],
     validCombinations: [
       { slot0: "startswith", slot1: "endswith" }
-    ]
+    ],
+    output: "True True"
   },
   {
     type: "fill",
     title: "10. Boşluk Doldurma: f-string Hata Ayıklama Modu (= Belirteci)",
-    summary: "f-string içinde değişken adının yanına '=' konulduğunda (örn: {deger=}) hem değişkenin adı hem de değeri ekrana yazılır.",
+    summary: "f-string içinde değişken adının yanına '=' konulduğunda (örn: {deger=}) hem değişkenin adı hem de değeri ekrana yazılır[cite: 6].",
     template: "skor = 95\nprint(f\"{slot0}skor{slot1}{slot2}\")",
     slots: ["slot0", "slot1", "slot2"],
     options: ["{", "=", "}", ":", "$"],
     validCombinations: [
       { slot0: "{", slot1: "=", slot2: "}" }
-    ]
+    ],
+    output: "skor=95"
   }
 ];
 
@@ -410,7 +455,7 @@ function loadQuestion6(index) {
   document.getElementById("type-badge-6").innerText = q.type === "arrange" ? "Sıralama" : "Boşluk Doldurma";
   document.getElementById("progress-fill-6").style.width = `${((index + 1) / quizData6.length) * 100}%`;
   
-  // Konu kuralı kutusu sorunun en üstünde sürekli görünür
+  // Konu kuralı kutusu
   const summaryBox = document.getElementById("topic-summary-6");
   summaryBox.innerHTML = `<strong>Konu Bilgisi:</strong> ${q.summary}`;
   
@@ -419,6 +464,11 @@ function loadQuestion6(index) {
   const feedback = document.getElementById("feedback-6");
   feedback.innerText = "";
   feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container-6");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output-6").innerText = "";
   
   document.getElementById("btn-check-6").style.display = "inline-block";
   document.getElementById("btn-next-6").style.display = "none";
@@ -542,7 +592,7 @@ function clearSlot6(slot) {
   renderFillWorkspace6();
 }
 
-/* Cevap Kontrolü */
+/* Cevap Kontrolü ve Konsol Çıktısı Gösterme */
 function checkAnswer6() {
   const q = quizData6[currentStep6];
   let isCorrect = false;
@@ -566,7 +616,14 @@ function checkAnswer6() {
   }
 
   if (isCorrect) {
-    showFeedback6("✓ Tebrikler! Doğru cevap.", "success");
+    showFeedback6("✓ Tebrikler! Kod doğru çalıştı.", "success");
+    
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container-6");
+    const outputBox = document.getElementById("code-output-6");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
     document.getElementById("btn-check-6").style.display = "none";
     document.getElementById("btn-next-6").style.display = "inline-block";
   } else {
