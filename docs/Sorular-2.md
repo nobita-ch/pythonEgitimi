@@ -429,15 +429,15 @@ const quizData2 = [
   },
   {
     type: "fill",
-    title: "10. Boşluk Doldurma: int() ve end Birlikte Kullanım",
-    summary: "Girdi tam sayıya int() ile çevrilir; end=\"\" ise çıktının sonunda alt satıra inmeyi engeller[cite: 2].",
-    template: "sayi = {slot0}(input())\nprint(sayi, {slot1}=\"\")",
+    title: "10. Boşluk Doldurma: int() ve end=\"\" ile Yan Yana Yazdırma",
+    summary: "Girdi tam sayıya int() ile çevrilir; ilk print'teki end=\"\" parametresi alt satıra geçişi engelleyerek ikinci print'in yanına eklenmesini sağlar[cite: 2].",
+    template: "sayi = {slot0}(input())\nprint(sayi, {slot1}=\"\")\nprint(sayi)",
     slots: ["slot0", "slot1"],
     options: ["int", "end", "sep", "float"],
     validCombinations: [
       { slot0: "int", slot1: "end" }
     ],
-    output: "4242  # (Girdi 42 olduğunda alt satıra geçmeden bitiş sağlar)"
+    output: "4242"
   }
 ];
 
