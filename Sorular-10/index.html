@@ -1,0 +1,2763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Sorular-9.4/">
+      
+      
+        <link rel="next" href="../Sorular-11/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Sorular-10 - Python Materyalleri</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Materyalleri" class="md-header__button md-logo" aria-label="Python Materyalleri" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Materyalleri
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sorular-10
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Materyalleri" class="md-nav__button md-logo" aria-label="Python Materyalleri" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Materyalleri
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Ders Notları
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Ders Notları
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%29%20Girinti%2CYorum%20ve%20%C3%87ok%20Sat%C4%B1rl%C4%B1%20%C4%B0fadeler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1) Girinti, Yorum ve Çok Satırlı İfadeler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%29%20Girdi%20ve%20%C3%87%C4%B1kt%C4%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2) Girdi ve Çıktı
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%29%20De%C4%9Fi%C5%9Fkenler%20%28Variables%29%20ve%20Kapsam%20%28Scope%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3) Değişkenler (Variables) ve Kapsam (Scope)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%29%20Veri%20T%C3%BCrleri%20%28Data%20Types%29%20ve%20Tip%20D%C3%B6n%C3%BC%C5%9F%C3%BCmleri%20%28Type%20Casting%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4) Veri Türleri (Data Types) ve Tip Dönüşümleri (Type Casting)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%29%20Python%27da%20random%20Mod%C3%BCl%C3%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5) Python'da random Modülü
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%29%20String%20%28Dize%20-%20Dizgi%20-%20Karakter%20Dizisi%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6) String (Dize - Dizgi - Karakter Dizisi)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%29%20Operat%C3%B6rler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7) Operatörler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%29%20Boole%20De%C4%9Ferleri%20ve%20Do%C4%9Fruluk%20Mant%C4%B1klar%C4%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8) Boole Değerleri ve Doğruluk Mantıkları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.1%29%20Python%20Koleksiyonlar%C4%B1%20-%20List%20%28Liste%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.1) List (Liste)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.2%29%20Python%20Koleksiyonlar%C4%B1%20-%20Tuple%20%28Demet%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.2) Tuple (Demet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.3%29%20Python%20Koleksiyonlar%C4%B1%20-%20Set%20%28K%C3%BCme%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.3) Set (Küme)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.4%29%20Python%20Koleksiyonlar%C4%B1%20-%20Dictionarie%20%28S%C3%B6zl%C3%BCk%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.4) Dictionary (Sözlük)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10%29%20if%20-%20else%20-%20elif%20%28Ko%C5%9Ful%20Durum%20%C4%B0fadeleri%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10) if - else - elif (Koşul Durum İfadeleri)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11%29%20match%20-%20case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11) match - case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12%29%20D%C3%B6ng%C3%BCler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12) Döngüler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13%29%20Fonksiyonlar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13) Fonksiyonlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14%29%20Yineleyicileri%20%28Iterators%29%20ve%20Yinelenebilir%20%28Iterables%29%20Nesneler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14) Yineleyicileri (Iterators) ve Yinelenebilir (Iterables) Nesneler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15%29%20Mod%C3%BCller%20%28Modules%29%20ve%20Paket%20Yap%C4%B1s%C4%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15) Modüller (Modules) ve Paket Yapısı
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16%29%20Hata%20ve%20%C4%B0stisna%20Y%C3%B6netimi%20%28Exception%20Handling%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16) Hata ve İstisna Yönetimi (Exception Handling)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18%29%20Python%27da%20Nesne%20Y%C3%B6nelimli%20Programlama%20%28OOP%29%20S%C4%B1n%C4%B1flar%20ve%20Nesneler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17) Python'da Nesne Yönelimli Programlama (OOP) Sınıflar ve Nesneler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19%29%20__init__%28%29%20Metodu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18) __init__() Metodu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20%29%20self%20parametresi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19) self Parametresi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21%29%20S%C4%B1n%C4%B1f%20Nitelikleri%20%28Class%20Attributes%29%20ve%20%C3%96rnek%20Nitelikleri%20%28Instance%20Attributes%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20) Sınıf Nitelikleri (Class Attributes) ve Örnek Nitelikleri (Instance Attributes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22%29%20S%C4%B1n%C4%B1f%20Metotlar%20%28Class%20Methods%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21) Sınıf Metotları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23%29%20Inheritance%20%28Miras%20-%20Kal%C4%B1t%C4%B1m%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22) Inheritance (Kalıtım)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24%29%20Polymorphism%20%28Polymorfizm%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23) Polymorphism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25%29%20Encapsulation%20%28Kaps%C3%BClleme%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24) Encapsulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26%29%20Inner%20Classes%20%28%C4%B0%C3%A7%20S%C4%B1n%C4%B1flar%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25) Inner Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Örnekleri
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Örnekleri
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-9.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-9.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-9.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-9.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-9.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-9.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-9.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-9.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-18
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-19
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-20
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-21
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-22
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-23
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-24
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sorular-25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorular-25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Sorular-10</h1>
+
+<!-- PYTHON INTERACTIVE EXERCISES: KOŞULLU DURUMLAR (IF - ELIF - ELSE - MATCH) -->
+<div id="quiz-container-13" class="interactive-quiz">
+  <!-- Üst Bar / İlerleme -->
+  <div class="quiz-header">
+    <div class="quiz-step-info">
+      <span id="step-badge-13" class="badge">Soru 1 / 10</span>
+      <span id="type-badge-13" class="badge badge-type">Sıralama</span>
+    </div>
+    <div class="quiz-progress-bar">
+      <div id="progress-fill-13" class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Sabit Konu Bilgilendirme Kutusu (Sorunun Üstünde) -->
+  <div id="topic-summary-13" class="summary-box"></div>
+
+  <!-- Soru Alanı -->
+  <div class="quiz-body">
+    <h3 id="question-title-13" class="q-title"></h3>
+
+    <!-- Kod / Boşluk Doldurma Konteyneri (Beyaz Arka Plan) -->
+    <div id="workspace-13" class="workspace-box"></div>
+
+    <!-- Doğru Cevap Sonrası Konsol/Terminal Çıktı Kutusu -->
+    <div id="code-output-container-13" class="output-wrapper" style="display: none;">
+      <div class="output-title">Terminal / Konsol Çıktısı:</div>
+      <div id="code-output-13" class="output-box"></div>
+    </div>
+
+    <!-- Parça Havuzu -->
+    <div id="pool-section-13">
+      <div class="pool-header">Parçalar (Seçmek / Çıkarmak için dokunun):</div>
+      <div id="options-pool-13" class="options-container"></div>
+    </div>
+  </div>
+
+  <!-- Geri Bildirim ve Butonlar -->
+  <div class="quiz-footer">
+    <div id="feedback-13" class="feedback-msg"></div>
+    <div class="action-buttons">
+      <button id="btn-reset-13" class="btn btn-secondary" onclick="resetCurrentQuestion13()">Sıfırla</button>
+      <button id="btn-check-13" class="btn btn-primary" onclick="checkAnswer13()">Kontrol Et</button>
+      <button id="btn-next-13" class="btn btn-success" onclick="nextQuestion13()" style="display: none;">Sonraki Soru →</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.interactive-quiz {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-header {
+  margin-bottom: 1rem;
+}
+
+.quiz-step-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge-type {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.quiz-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 10%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+/* Sorunun Üstünde Sürekli Görünen Bilgi Kutusu */
+.summary-box {
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #14532d;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.q-title {
+  margin: 0.25rem 0 0.75rem 0;
+  color: #111827;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.workspace-box {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 85px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #0f172a;
+}
+
+/* Terminal / Çıktı Gösterim Stili */
+.output-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.output-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.output-box {
+  background: #0f172a;
+  color: #34d399;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.pool-header {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 48px;
+  margin-bottom: 1rem;
+}
+
+.code-chip {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.code-chip:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.code-chip.used {
+  opacity: 0.25;
+  pointer-events: none;
+  background: #e2e8f0;
+}
+
+.code-slot {
+  display: inline-block;
+  min-width: 50px;
+  height: 30px;
+  border: 2px dashed #93c5fd;
+  border-radius: 5px;
+  background: #eff6ff;
+  vertical-align: middle;
+  margin: 0 3px;
+  text-align: center;
+  line-height: 26px;
+  cursor: pointer;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.code-slot.filled {
+  border-style: solid;
+  border-color: #2563eb;
+  background: #dbeafe;
+  color: #0f172a;
+}
+
+.sortable-line {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f172a;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sortable-line:hover {
+  border-color: #ef4444;
+}
+
+.quiz-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feedback-msg {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: 1.2rem;
+}
+
+.feedback-msg.success { color: #15803d; }
+.feedback-msg.error { color: #b91c1c; }
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn-primary { background: #2563eb; color: #ffffff; }
+.btn-secondary { background: #e2e8f0; color: #334155; }
+.btn-success { background: #16a34a; color: #ffffff; }
+</style>
+
+<script>
+// KOŞULLU DURUMLAR KONUSU SORU HAVUZU VE ÇIKTI VERİLERİ
+const quizData13 = [
+  /* ================= 5 ADET SIRALAMA / TIKLA-BIRAK ================= */
+  {
+    type: "arrange",
+    title: "1. if - elif - else Hiyerarşisi",
+    summary: "Koşullar yukarıdan aşağıya kontrol edilir; if ilk kontrolü yapar, elif alternatifleri sunar ve else hiçbiri uymadığında devreye girer[cite: 13].",
+    pieces: [
+      "bakiye = 50",
+      "if bakiye >= 100:",
+      "    print(\"Yeterli\")",
+      "elif bakiye >= 40:",
+      "    print(\"Kritik\")",
+      "else:",
+      "    print(\"Yetersiz\")"
+    ],
+    solutions: [
+      [
+        "bakiye = 50",
+        "if bakiye >= 100:",
+        "    print(\"Yeterli\")",
+        "elif bakiye >= 40:",
+        "    print(\"Kritik\")",
+        "else:",
+        "    print(\"Yetersiz\")"
+      ]
+    ],
+    output: "Kritik"
+  },
+  {
+    type: "arrange",
+    title: "2. Tek Satırlık Koşul (Ternary Operator) ile Değer Atama",
+    summary: "degisken = dogru_deger if kosul else yanlis_deger şeklinde tek satırda atama yapılabilir[cite: 13].",
+    pieces: [
+      "yas = 19",
+      "durum = \"Resit\" if yas >= 18 else \"Cocuk\"",
+      "print(durum)"
+    ],
+    solutions: [
+      [
+        "yas = 19",
+        "durum = \"Resit\" if yas >= 18 else \"Cocuk\"",
+        "print(durum)"
+      ]
+    ],
+    output: "Resit"
+  },
+  {
+    type: "arrange",
+    title: "3. İç İçe Koşullar (Nested If)",
+    summary: "Bir if bloğunun içine başka bir koşul yapısı yerleştirilerek çok aşamalı doğrulama sağlanır[cite: 13].",
+    pieces: [
+      "oturum_acik = True",
+      "rol = \"editor\"",
+      "if oturum_acik:",
+      "    if rol == \"editor\":",
+      "        print(\"Duzenleme Yetkisi\")"
+    ],
+    solutions: [
+      [
+        "oturum_acik = True",
+        "rol = \"editor\"",
+        "if oturum_acik:",
+        "    if rol == \"editor\":",
+        "        print(\"Duzenleme Yetkisi\")"
+      ],
+      [
+        "rol = \"editor\"",
+        "oturum_acik = True",
+        "if oturum_acik:",
+        "    if rol == \"editor\":",
+        "        print(\"Duzenleme Yetkisi\")"
+      ]
+    ],
+    output: "Duzenleme Yetkisi"
+  },
+  {
+    type: "arrange",
+    title: "4. pass İfadesi ile Boş Gövde Tanımlama",
+    summary: "Gövdesi boş bırakılamayan if bloklarında hata almamak için 'pass' yer tutucusu kullanılır[cite: 13].",
+    pieces: [
+      "kod = 200",
+      "if kod == 200:",
+      "    pass",
+      "else:",
+      "    print(\"Hata\")",
+      "print(\"Kontrol Bitti\")"
+    ],
+    solutions: [
+      [
+        "kod = 200",
+        "if kod == 200:",
+        "    pass",
+        "else:",
+        "    print(\"Hata\")",
+        "print(\"Kontrol Bitti\")"
+      ]
+    ],
+    output: "Kontrol Bitti"
+  },
+  {
+    type: "arrange",
+    title: "5. match-case Örüntü Eşleme Yapısı",
+    summary: "match-case yapısında case _ durumu diğer dillerdeki 'default' (varsayılan) blok gibi çalışır[cite: 13].",
+    pieces: [
+      "tercih = 2",
+      "match tercih:",
+      "    case 1:",
+      "        print(\"Baslat\")",
+      "    case 2:",
+      "        print(\"Durdur\")",
+      "    case _:",
+      "        print(\"Gecersiz\")"
+    ],
+    solutions: [
+      [
+        "tercih = 2",
+        "match tercih:",
+        "    case 1:",
+        "        print(\"Baslat\")",
+        "    case 2:",
+        "        print(\"Durdur\")",
+        "    case _:",
+        "        print(\"Gecersiz\")"
+      ]
+    ],
+    output: "Durdur"
+  },
+
+  /* ================= 5 ADET BOŞLUK DOLDURMA ================= */
+  {
+    type: "fill",
+    title: "6. Boşluk Doldurma: if ve elif Blok Başlatıcıları",
+    summary: "Python'da her koşul satırının sonunda mutlaka iki nokta (:) yer almalıdır[cite: 13].",
+    template: "puan = 85\nif puan >= 90{slot0}\n    print(\"A\")\nelif puan >= 80{slot1}\n    print(\"B\")",
+    slots: ["slot0", "slot1"],
+    options: [":", ":", ";", "."],
+    validCombinations: [
+      { slot0: ":", slot1: ":" }
+    ],
+    output: "B"
+  },
+  {
+    type: "fill",
+    title: "7. Boşluk Doldurma: Tek Satırlık if-else (Ternary)",
+    summary: "Tek satırlık if-else ifadelerinde 'if' ve 'else' anahtar sözcükleri karar mekanizmasını oluşturur[cite: 13].",
+    template: "sayi = 10\nmesaj = \"Cift\" {slot0} sayi % 2 == 0 {slot1} \"Tek\"\nprint(mesaj)",
+    slots: ["slot0", "slot1"],
+    options: ["if", "else", "elif", "then"],
+    validCombinations: [
+      { slot0: "if", slot1: "else" }
+    ],
+    output: "Cift"
+  },
+  {
+    type: "fill",
+    title: "8. Boşluk Doldurma: Mantıksal and ile Çoklu Koşul",
+    summary: "if ifadesinde birden fazla şartın aynı anda doğru olması için 'and' operatörü kullanılır[cite: 13].",
+    template: "sicaklik = 25\nnem = 50\nif sicaklik > 20 {slot0} nem < 60:\n    {slot1}(\"Uygun\")",
+    slots: ["slot0", "slot1"],
+    options: ["and", "print", "or", "pass"],
+    validCombinations: [
+      { slot0: "and", slot1: "print" }
+    ],
+    output: "Uygun"
+  },
+  {
+    type: "fill",
+    title: "9. Boşluk Doldurma: match-case Varsayılan Durum (_)",
+    summary: "match-case yapısında hiçbir case eşleşmediğinde 'case _:' varsayılan dalı çalıştırılır[cite: 13].",
+    template: "rol = \"ziyaretci\"\nmatch rol:\n    case \"admin\":\n        print(\"Tam Yetki\")\n    case {slot0}:\n        print(\"Kisitli {slot1}\")",
+    slots: ["slot0", "slot1"],
+    options: ["_", "Yetki", "else", "default"],
+    validCombinations: [
+      { slot0: "_", slot1: "Yetki" }
+    ],
+    output: "Kisitli Yetki"
+  },
+  {
+    type: "fill",
+    title: "10. Boşluk Doldurma: pass ve else Kullanımı",
+    summary: "Koşul sağlandığında hiçbir işlem yapılmayacaksa 'pass' kullanılır, aksi durumlar için 'else' bloğuna geçilir[cite: 13].",
+    template: "durum = False\nif durum:\n    {slot0}\n{slot1}:\n    print(\"Kapali\")",
+    slots: ["slot0", "slot1"],
+    options: ["pass", "else", "break", "elif"],
+    validCombinations: [
+      { slot0: "pass", slot1: "else" }
+    ],
+    output: "Kapali"
+  }
+];
+
+let currentStep13 = 0;
+let userArrangeState13 = [];
+let userFillState13 = {};
+
+function initQuiz13() {
+  loadQuestion13(currentStep13);
+}
+
+function loadQuestion13(index) {
+  const q = quizData13[index];
+  document.getElementById("step-badge-13").innerText = `Soru ${index + 1} / ${quizData13.length}`;
+  document.getElementById("type-badge-13").innerText = q.type === "arrange" ? "Sıralama" : "Boşluk Doldurma";
+  document.getElementById("progress-fill-13").style.width = `${((index + 1) / quizData13.length) * 100}%`;
+
+  // Konu kuralı kutusu
+  const summaryBox = document.getElementById("topic-summary-13");
+  summaryBox.innerHTML = `<strong>Konu Bilgisi:</strong> ${q.summary}`;
+
+  document.getElementById("question-title-13").innerText = q.title;
+
+  const feedback = document.getElementById("feedback-13");
+  feedback.innerText = "";
+  feedback.className = "feedback-msg";
+
+  // Terminal çıktısını gizle ve sıfırla
+  const outputContainer = document.getElementById("code-output-container-13");
+  outputContainer.style.display = "none";
+  document.getElementById("code-output-13").innerText = "";
+
+  document.getElementById("btn-check-13").style.display = "inline-block";
+  document.getElementById("btn-next-13").style.display = "none";
+
+  const workspace = document.getElementById("workspace-13");
+  const pool = document.getElementById("options-pool-13");
+  workspace.innerHTML = "";
+  pool.innerHTML = "";
+
+  if (q.type === "arrange") {
+    userArrangeState13 = [];
+    renderArrangeWorkspace13();
+
+    const shuffled = [...q.pieces].sort(() => Math.random() - 0.5);
+    shuffled.forEach((piece) => {
+      const btn = document.createElement("button");
+      btn.className = "code-chip";
+      btn.innerText = piece;
+      btn.onclick = () => addPieceToArrange13(piece, btn);
+      pool.appendChild(btn);
+    });
+  } else if (q.type === "fill") {
+    userFillState13 = {};
+    q.slots.forEach(slot => userFillState13[slot] = null);
+    renderFillWorkspace13();
+
+    const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+    shuffledOptions.forEach((opt) => {
+      const btn = document.createElement("button");
+      btn.className = "code-chip";
+      btn.innerText = opt;
+      btn.dataset.rawVal = opt;
+      btn.onclick = () => selectFillOption13(opt, btn);
+      pool.appendChild(btn);
+    });
+  }
+}
+
+/* Sıralama Mantığı */
+function addPieceToArrange13(piece, btnElement) {
+  userArrangeState13.push({ text: piece, btnRef: btnElement });
+  btnElement.classList.add("used");
+  renderArrangeWorkspace13();
+}
+
+function removePieceFromArrange13(index) {
+  const item = userArrangeState13[index];
+  item.btnRef.classList.remove("used");
+  userArrangeState13.splice(index, 1);
+  renderArrangeWorkspace13();
+}
+
+function renderArrangeWorkspace13() {
+  const workspace = document.getElementById("workspace-13");
+  if (userArrangeState13.length === 0) {
+    workspace.innerHTML = '<span style="color: #94a3b8; font-style: italic;">Seçeneklere dokunarak buraya ekleyin...</span>';
+    return;
+  }
+  workspace.innerHTML = "";
+  userArrangeState13.forEach((item, idx) => {
+    const line = document.createElement("div");
+    line.className = "sortable-line";
+    line.innerHTML = `<span>${escapeHtml13(item.text)}</span> <span style="color:#ef4444; font-size:0.8rem; font-weight:600;">✕ Kaldır</span>`;
+    line.onclick = () => removePieceFromArrange13(idx);
+    workspace.appendChild(line);
+  });
+}
+
+/* Boşluk Doldurma Mantığı */
+let activeSlot13 = null;
+
+function renderFillWorkspace13() {
+  const q = quizData13[currentStep13];
+  const workspace = document.getElementById("workspace-13");
+  let html = escapeHtml13(q.template);
+
+  q.slots.forEach((slot) => {
+    const val = userFillState13[slot];
+    const slotHtml = val 
+      ? `<span class="code-slot filled" onclick="clearSlot13('${slot}')">${escapeHtml13(val)}</span>`
+      : `<span class="code-slot" onclick="setActiveSlot13('${slot}')">${activeSlot13 === slot ? '?' : '___'}</span>`;
+    html = html.replace(`{${slot}}`, slotHtml);
+  });
+
+  workspace.innerHTML = html;
+}
+
+function setActiveSlot13(slot) {
+  activeSlot13 = slot;
+  renderFillWorkspace13();
+}
+
+function selectFillOption13(val, btnElement) {
+  const q = quizData13[currentStep13];
+  let targetSlot = activeSlot13;
+  if (!targetSlot) {
+    targetSlot = q.slots.find(s => userFillState13[s] === null);
+  }
+
+  if (targetSlot) {
+    userFillState13[targetSlot] = val;
+    btnElement.classList.add("used");
+    btnElement.dataset.assignedSlot = targetSlot;
+    activeSlot13 = null;
+    renderFillWorkspace13();
+  }
+}
+
+function clearSlot13(slot) {
+  const pool = document.getElementById("options-pool-13");
+  const buttons = pool.querySelectorAll(".code-chip");
+  buttons.forEach(b => {
+    if (b.dataset.assignedSlot === slot) {
+      b.classList.remove("used");
+      delete b.dataset.assignedSlot;
+    }
+  });
+
+  userFillState13[slot] = null;
+  activeSlot13 = slot;
+  renderFillWorkspace13();
+}
+
+/* Cevap Kontrolü ve Terminal Çıktısı Gösterme */
+function checkAnswer13() {
+  const q = quizData13[currentStep13];
+  let isCorrect = false;
+
+  if (q.type === "arrange") {
+    const userAns = userArrangeState13.map(i => i.text);
+    if (userAns.length !== q.pieces.length) {
+      showFeedback13("Lütfen tüm parçaları yerleştirin.", "error");
+      return;
+    }
+    isCorrect = q.solutions.some(sol => JSON.stringify(sol) === JSON.stringify(userAns));
+  } else if (q.type === "fill") {
+    const isAllFilled = q.slots.every(s => userFillState13[s] !== null);
+    if (!isAllFilled) {
+      showFeedback13("Lütfen boşlukları doldurun.", "error");
+      return;
+    }
+    isCorrect = q.validCombinations.some(comb => {
+      return q.slots.every(slot => userFillState13[slot] === comb[slot]);
+    });
+  }
+
+  if (isCorrect) {
+    showFeedback13("✓ Tebrikler! Kod doğru çalıştı.", "success");
+
+    // Doğru cevap verildiğinde Terminal çıktısını ekranda göster
+    const outputContainer = document.getElementById("code-output-container-13");
+    const outputBox = document.getElementById("code-output-13");
+    outputBox.innerText = q.output;
+    outputContainer.style.display = "block";
+
+    document.getElementById("btn-check-13").style.display = "none";
+    document.getElementById("btn-next-13").style.display = "inline-block";
+  } else {
+    showFeedback13("✕ Yanlış seçim yapıldı. Üstteki konu bilgisini inceleyip tekrar deneyin.", "error");
+  }
+}
+
+function showFeedback13(msg, type) {
+  const feedback = document.getElementById("feedback-13");
+  feedback.innerText = msg;
+  feedback.className = `feedback-msg ${type}`;
+}
+
+function resetCurrentQuestion13() {
+  loadQuestion13(currentStep13);
+}
+
+function nextQuestion13() {
+  if (currentStep13 < quizData13.length - 1) {
+    currentStep13++;
+    loadQuestion13(currentStep13);
+  } else {
+    document.getElementById("quiz-container-13").innerHTML = `
+      <div style="text-align: center; padding: 2.5rem 1rem;">
+        <h2 style="color: #16a34a; margin-bottom: 0.5rem; font-size: 1.5rem;">Bölüm Tamamlandı 🎉</h2>
+        <p style="color: #334155; font-size: 1rem;">Koşullu Durumlar (If, Elif, Else, Match) konusundaki tüm alıştırmaları başarıyla bitirdiniz.</p>
+      </div>
+    `;
+  }
+}
+
+function escapeHtml13(string) {
+  return String(string)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+document.addEventListener("DOMContentLoaded", initQuiz13);
+if (document.readyState === "interactive" || document.readyState === "complete") {
+  initQuiz13();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Sorular-9.4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sorular-9.4">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Sorular-9.4
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Sorular-11/" class="md-footer__link md-footer__link--next" aria-label="Next: Sorular-11">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Sorular-11
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
