@@ -9,6 +9,9 @@ theme:
       primary: indigo
       accent: indigo
 
+features:
+    - navigation.footer
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
