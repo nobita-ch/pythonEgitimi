@@ -1,4 +1,5 @@
 site_name: Python Materyalleri
+
 theme:
   name: material
   palette:
@@ -8,8 +9,7 @@ theme:
     - scheme: slate
       primary: indigo
       accent: indigo
-
-features:
+  features:
     - navigation.footer
 
 markdown_extensions:
@@ -52,9 +52,7 @@ nav:
       - 23) Polymorphism: "24) Polymorphism (Polymorfizm).md"
       - 24) Encapsulation: "25) Encapsulation (Kapsülleme).md"
       - 25) Inner Classes: "26) Inner Classes (İç Sınıflar).md"
-
-
-  - Python Örnekleri: 
+  - Python Örnekleri:
       - Sorular-1: "Sorular-1.md"
       - Sorular-2: "Sorular-2.md"
       - Sorular-3: "Sorular-3.md"
